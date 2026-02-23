@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mongo-web-app
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/marnheus/aks-tests.git  # Your GitHub repository
+    targetRevision: HEAD
+    path: .  # Path to your Kubernetes manifests (current directory)
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: aks-test
+  syncPolicy:
+    # Disable automatic sync - all deployments manual
+    # automated:
+    #   prune: true
+    #   selfHeal: true
+    #   allowEmpty: false
+    syncOptions:
+      - CreateNamespace=true
+    retry:
+      limit: 5
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 3m0s
