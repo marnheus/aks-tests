@@ -15,11 +15,10 @@ spec:
     server: https://kubernetes.default.svc
     namespace: aks-test
   syncPolicy:
-    # Disable automatic sync - all deployments manual
-    # automated:
-    #   prune: true
-    #   selfHeal: true
-    #   allowEmpty: false
+    automated:
+       prune: true
+       selfHeal: true
+       allowEmpty: false
     syncOptions:
       - CreateNamespace=true
     retry:
