@@ -1,0 +1,156 @@
+# Infrastructure as Code (IAC) .gitignore
+
+# Terraform files
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+!*.tfvars.example
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Bicep files
+*.bicepparam
+
+# ARM Templates
+*parameters.json
+!*parameters.template.json
+!*parameters.example.json
+
+# Azure CLI
+.azure/
+
+# Pulumi
+Pulumi.*.yaml
+.pulumi/
+
+# Ansible
+*.retry
+.vault_pass
+vault_password_file
+
+# General IAC secrets and sensitive files
+secrets.yaml
+secrets.yml
+*secret*
+*password*
+*key*
+*.pem
+*.p12
+*.pfx
+*.crt
+*.key
+*-key
+*_key
+*.env
+.env*
+!.env.example
+
+# Kubernetes files
+# Kubernetes secrets
+*secret*.yaml
+*secret*.yml
+
+# Helm
+charts/*.tgz
+.helm/
+
+# Kustomize
+kustomization.yaml
+kustomization.yml
+
+# kubectl
+kubeconfig
+.kubeconfig
+config
+.kube/config
+
+# Skaffold
+skaffold.yaml
+
+# Draft
+draft.toml
+
+# Local development files
+.vscode/settings.json
+.idea/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Generated documentation
+docs/_build/
+
+# IDE and editor files
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.idea/
+*.iml
+
+# Node.js (if using Node-based IAC tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if using Python-based IAC tools)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Go (if using Go-based IAC tools)
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Go workspace file
+go.work
