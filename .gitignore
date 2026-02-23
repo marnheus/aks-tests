@@ -55,9 +55,11 @@ secrets.yml
 !.env.example
 
 # Kubernetes files
-# Kubernetes secrets
+# Kubernetes secrets (but allow sealed secrets)
 *secret*.yaml
 *secret*.yml
+!*sealed-secret*.yaml
+!*sealed-secret*.yml
 
 # Helm
 charts/*.tgz
@@ -154,3 +156,8 @@ venv.bak/
 
 # Go workspace file
 go.work
+
+# Sealed Secrets tooling
+kubeseal.exe
+kubeseal.tar.gz
+kubeseal
